@@ -8,6 +8,26 @@ const VideoList = () => {
   const [isPlaying, setIsPlaying] = useState(true);
   const [likedVideos, setLikedVideos] = useState(Array(videosData.length).fill(false));
   const videoRef = useRef(null);
+  const touchStartY = useRef(0);
+
+  const handleSwipeStart = (e) => {
+    touchStartY.current = e.touches[0].clientY;
+  };
+
+  const handleSwipeEnd = (e) => {
+    const touchEndY = e.changedTouches[0].clientY;
+    const deltaY = touchEndY - touchStartY.current;
+
+    if (deltaY > 50 && currentVideoIndex > 0) {
+      setCurrentVideoIndex((prevIndex) => prevIndex - 1);
+    } else if (deltaY < -50 && currentVideoIndex < videosData.length - 1) {
+      setCurrentVideoIndex((prevIndex) => prevIndex + 1);
+    }
+  };
+
+  const handleSwipeCancel = () => {
+    touchStartY.current = 0;
+  };
 
   const handleSwipe = (direction) => {
     if (direction === 'up' && currentVideoIndex < videosData.length - 1) {
@@ -34,8 +54,6 @@ const VideoList = () => {
   };
 
   const toggleDownload = () => {
-    // Implement download logic here
-    const videoElement = videoRef.current;
     const videoUrl = videosData[currentVideoIndex].src;
     const a = document.createElement('a');
     a.href = videoUrl;
@@ -46,7 +64,11 @@ const VideoList = () => {
   };
 
   return (
-    <div className="VideoList">
+    <div className="VideoList"
+      onTouchStart={handleSwipeStart}
+      onTouchEnd={handleSwipeEnd}
+      onTouchCancel={handleSwipeCancel}
+      >
       <div
         className="VideoList-swipe-up"
         onClick={() => handleSwipe('down')}
