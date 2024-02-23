@@ -1,0 +1,178 @@
+
+/* for bigger screens like laptop */
+ @media only screen
+ and (min-width: 1030px)
+ and (max-width: 1605px)
+ {
+     .VideoList {
+        padding: 10px 0;
+        margin: 0;
+        width: 365px;
+      }
+    
+      .VideoContainer {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        /* max-width: 385px; */
+        margin: 0 auto;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      
+      .VideoContainer video {
+        width: 100%;
+        height: auto;
+        max-height: 100%;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+      
+      .VideoDetails {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0.8);
+        color: white;
+        text-align: center;
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+      }
+    
+      .VideoList-swipe-up, .VideoList-swipe-down {
+        width: 100%;
+        background-color: transparent;
+        text-align: center;
+        cursor: pointer;
+        padding: 5px;
+      }
+    
+      .arrow-btns:hover {
+        color: blue;
+      }
+    
+      .arrow-btns {
+        font-size: 20px;
+        padding: 0;
+        margin: 0;
+      }
+ }
+
+ /* for mobile */
+ @media only screen   
+ and (min-device-width : 360px)   
+ and (max-device-width : 640px)  
+ {
+    .VideoList {
+        padding: 0;
+        margin: 0;
+        width: 335px;
+      }
+    
+      .VideoContainer {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        /* max-width: 385px; */
+        margin: 0 auto;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      
+      .VideoContainer video {
+        width: 100%;
+        height: auto;
+        max-height: 100%;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+      
+      .VideoDetails {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0.8);
+        color: white;
+        text-align: center;
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+      }
+    
+      .VideoList-swipe-up, .VideoList-swipe-down {
+        width: 100%;
+        background-color: transparent;
+        text-align: center;
+        cursor: pointer;
+      }
+    
+      .arrow-btns:hover {
+        color: blue;
+      }
+    
+      .arrow-btns {
+        font-size: 20px;
+        padding: 0;
+        margin: 0;
+      }
+ } 
+
+ /* for all devices */
+
+ .VideoDetails h3 {
+    margin: 0;
+    font-size: 14px;
+  }
+
+ .VideoList-like-button {
+    position: absolute;
+    bottom: 90px;
+    right: 15px;
+    font-size: 25px;
+    color: white;
+    cursor: pointer;
+    z-index: 1;
+  }
+
+  .VideoList-download-button {
+    position: absolute;
+    bottom: 50px;
+    right: 15px;
+    font-size: 25px;
+    color: white;
+    cursor: pointer;
+    z-index: 1;
+  }
+
+  .PlayPauseButton {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    z-index: 1;
+  }
+  
+  .ProgressIndicator {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+  
+  .ProgressBar {
+    height: 100%;
+    width: 0;
+    background-color: #3498db;
+  }
